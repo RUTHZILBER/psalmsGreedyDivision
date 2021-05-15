@@ -1,0 +1,7 @@
+C:\Users\admin\source\repos\Teilim\Teilim\bin\Debug\Teilim.exe.config
+C:\Users\admin\source\repos\Teilim\Teilim\bin\Debug\Teilim.exe
+C:\Users\admin\source\repos\Teilim\Teilim\bin\Debug\Teilim.pdb
+C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.exe
+C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.pdb
