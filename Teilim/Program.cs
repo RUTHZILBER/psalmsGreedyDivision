@@ -182,7 +182,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                             h1 = Math.Abs(h1);
                             if (h1 < h2)//prefer regulari...
                             {
-                                prakimRange[l + j].Count = count + seferTeilim[i + 1];
+                                prakimRange[l + j].Count = count + seferTeilim[i];
 
 
                                 prakimRange[l + j++].To = i;
@@ -216,7 +216,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                         perekToOt.TryGetValue(prakimRange[i].From, out fromPerek);
                         perekToOt.TryGetValue(prakimRange[i].To, out toPerek);
 
-                        Console.WriteLine("יהודי מספר   " + (i + 1) + " צריך לומר מפרק : " + (fromPerek) + " עד פרק " + (toPerek) + " ! זכור, מדובר ב " + prakimRange[i].Count + " פסוקים.");
+                        Console.WriteLine("יהודי מספר   " + (i + 1) + " צריך לומר מפרק  " + (fromPerek) + " עד פרק " + (toPerek) + " . זכור! מדובר ב " + prakimRange[i].Count + " פסוקים.");
                     }
                     else
                     {
@@ -228,7 +228,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                             perekToOt.TryGetValue(to, out toPerek);
 
 
-                            Console.WriteLine("יהודי מספר " + (i + 1) + " צריך לומר את הפרקים הבאים, מ: " + fromPerek + " עד " + toPerek + " ! זכור, מדובר ב " + prakimRange[i].Count + " פסוקים.");
+                            Console.WriteLine("יהודי מספר " + (i + 1) + " צריך לומר את הפרקים הבאים, מפרק " + fromPerek + " עד " + toPerek + " . זכור! מדובר ב " + prakimRange[i].Count + " פסוקים.");
                         }
                         else//כאשר חלק מהפרקים מקיט
                         {
@@ -243,12 +243,12 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                                 perekToOt119.TryGetValue(firstOt, out from119);
                                 perekToOt119.TryGetValue(lastOt, out to119);
 
-                                Console.WriteLine("יהודי מספר " + (i + 1) + " צריך לומר את הפרקים הבאים, מ קיט אות:  " + from119 + " עד האות : " + to119 + " ! זכור, מדובר ב " + prakimRange[i].Count + " פסוקים.");
+                                Console.WriteLine("יהודי מספר " + (i + 1) + " צריך לומר את הפרקים הבאים, מ פרק קיט אות  " + from119 + " עד האות " + to119 + " . זכור! מדובר ב " + prakimRange[i].Count + " פסוקים.");
                             }
                             else
                             {
                                 //קיט נמצא בטווח של ההתחלה/סוף/אמצע
-                                Console.Write("יהודי מספר " + (i + 1) + " צריך לומר את הפרקים הבאים, מ: ");
+                                Console.Write("יהודי מספר " + (i + 1) + " צריך לומר את הפרקים הבאים, מפרק ");
 
                                 if (from < 119)//כאשר מתחילים מפרק קודם לקיט
                                 {
@@ -262,7 +262,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
 
                                     perekToOt119.TryGetValue(firstOt, out from119);
 
-                                    Console.Write(" מפרק קיט אות: " + from119 + " עד ");
+                                    Console.Write(" מפרק קיט מהאות " + from119 + " עד ");
                                 }
 
                                 if (to > 119 + 21)//כאשר הפרק בו מסימים גדול מקיט
@@ -279,12 +279,12 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
 
                                     perekToOt119.TryGetValue(lastOt, out to119);
 
-                                    Console.Write("פרק קיט אות:  " + to119);
+                                    Console.Write("פרק קיט מהאות  " + to119);
                                 }
 
 
 
-                                Console.WriteLine(" ! זכור, מדובר ב " + prakimRange[i].Count + " פסוקים.");
+                                Console.WriteLine(" ! זכור! מדובר ב " + prakimRange[i].Count + " פסוקים.");
 
                             }
                         }
@@ -299,11 +299,17 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
 
 
         static void Main(string[] args)
-        {
+       {
+            //    for (int i = 1; i < 150; i++)
+            //    {
+            //        Console.WriteLine("");
+            //        Console.WriteLine("");
+            //        Console.WriteLine("");
+            //        printTeilimParts(i);
+            //    }
 
-            printTeilimParts(4);
 
-
+            printTeilimParts(19);
         }
     }
 }

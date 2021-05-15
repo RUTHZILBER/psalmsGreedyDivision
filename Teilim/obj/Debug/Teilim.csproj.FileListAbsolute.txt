@@ -5,3 +5,7 @@ C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.csprojAssemblyReferen
 C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.exe
 C:\Users\admin\source\repos\Teilim\Teilim\obj\Debug\Teilim.pdb
+C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Teilim.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Teilim.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Teilim.exe
+C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Teilim.pdb
