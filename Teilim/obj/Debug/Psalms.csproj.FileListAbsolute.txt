@@ -4,3 +4,4 @@ C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\bin\Debug\Teilim.
 C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Psalms.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Teilim.exe
 C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Teilim.pdb
+C:\Users\admin\source\repos\Teilim\psalmsGreedyDivision\Teilim\obj\Debug\Psalms.csprojAssemblyReference.cache

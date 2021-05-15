@@ -54,7 +54,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                 //Console.WriteLine(" מספר הפסוקים בתהילים: " + psukimCount);//מספר הפסוקים בכל התהילים
                 double avg1 = Convert.ToDouble(psukimCount) / Convert.ToDouble(numOfPeople);
                 int avg = Convert.ToInt32(Math.Round(avg1));//ממוצע מועגל למספר הקרוב ביותר
-                //Console.WriteLine(" מספר הפסוקים הממוצע: " + avg);//ממוצע התהילים לבן אדם
+               Console.WriteLine(" מספר הפסוקים הממוצע: " + avg);//ממוצע התהילים לבן אדם
                 Console.WriteLine("שים לב, יש לומר את מספר הפסוקים כולל האות הראשונה והאות האחרונה! ");
 
                 for (i = 0; i < prakimRange.Length; i++)
@@ -86,7 +86,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
 
                     if (diff == 0)//מספר פרקי התהילים כמו הממוצע
                     {
-                        countAll += count;
+                       
                         prakimRange[j].Count = count;
                         prakimRange[j].From = i + 1;
                         prakimRange[--j].To = i;
@@ -102,7 +102,7 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                         if (diff < diffWithoutLast)//הקרבה לממוצע כאשר אומרים גם פרק התהילים האחרון
                         {
                             prakimRange[j].Count = count + seferTeilim[i + 1];
-                            countAll += count + seferTeilim[i + 1];
+                         
                             prakimRange[j].From = i + 1;
                             prakimRange[--j].To = i;
 
@@ -111,12 +111,17 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
                         {
 
                             prakimRange[j].Count = count;
-                            countAll += count;
+                          
                             prakimRange[j].From = i + 2;
                             prakimRange[--j].To = i + 1;
                             i++;
                         }
                     }
+                }
+                countAll = 0;
+                for (int l = 0; l < prakimRange.Length; l++)
+                {
+                    countAll += prakimRange[l].Count;
                 }
                 //for (int l = 10; l < 151; l++)//הדפסות לנוחות
                 //{
@@ -144,77 +149,76 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
 
                 //סריקת שיפור הפרקים, עבור כל 3 פרקים ברצף עד 2 האחרונים
 
-                for (int l = 0; l < numOfPeople - 2; l++)
-                {
-                    int all3people = prakimRange[l].Count + prakimRange[l + 1].Count + prakimRange[l + 2].Count;//סכום 3 הפרקים הקרובים
-                    double avg3people1 = Convert.ToDouble(all3people) / Convert.ToDouble(3);//ממוצע 3 האחרונים
-                    int avg3people = Convert.ToInt32(Math.Round(avg3people1));//עיגול כלפי מעלה או מטה
+                //for (int l = 0; l < numOfPeople - 2; l++)
+                //{
+                //    int all3people = prakimRange[l].Count + prakimRange[l + 1].Count + prakimRange[l + 2].Count;//סכום 3 הפרקים הקרובים
+                //    double avg3people1 = Convert.ToDouble(all3people) / Convert.ToDouble(3);//ממוצע 3 האחרונים
+                //    int avg3people = Convert.ToInt32(Math.Round(avg3people1));//עיגול כלפי מעלה או מטה
 
-                    count = 0;
+                //    count = 0;
 
-                    j = 0;
+                //    j = 0;
 
-                    while (j < 3)
-                    {
-                        for (i = prakimRange[l].From; i <= prakimRange[l + 2].To && count < avg3people; i++)
-                        {
-                            count += seferTeilim[i];
-                        }
+                //    while (j < 3)
+                //    {
+                //        for (i = prakimRange[l].From; i <= prakimRange[l + 2].To && count < avg3people; i++)
+                //        {
+                //            count += seferTeilim[i];
+                //        }
 
-                        int h2 = 0;
-                        int h1 = avg3people - count;
-                        if (h1 == 0)
-                        {
-                            countAll += count;
-                            prakimRange[l + j].Count = count;
+                //        int h2 = 0;
+                //        int h1 = avg3people - count;
+                //        if (h1 == 0)
+                //        {
+                //            countAll += count;
+                //            prakimRange[l + j].Count = count;
 
-                            prakimRange[l + j++].To = i;
-                            if(l+j!=numOfPeople)
-                                 prakimRange[l + (j)].From = i + 1;
+                //            prakimRange[l + j++].To = i-1;
+                //            if(l+j!=numOfPeople)
+                //                 prakimRange[l + (j)].From = i;
 
-                        }
+                //        }
 
-                        else
-                        {
-                            if (i > 0)
-                                count -= seferTeilim[i - 1];
-                            h2 = avg3people - count;//new
-                            h1 = Math.Abs(h1);
-                            if (h1 < h2)//prefer regulari...
-                            {
-                                prakimRange[l + j].Count = count + seferTeilim[i];
+                //        else
+                //        {
+                //            if (i > 0&&i<(seferTeilim.Length))
+                //                count -= seferTeilim[i];
+                //            h2 = avg3people - count;//new
+                //            h1 = Math.Abs(h1);
+                //            if (h1 < h2)//prefer regulari...
+                //            {
+                //                prakimRange[l + j].Count = count + seferTeilim[i+1];
 
 
-                                prakimRange[l + j++].To = i;
-                                if (l+j  != numOfPeople)
-                                    prakimRange[l + (j)].From = i + 1;
+                //                prakimRange[l + j++].To = i-1;
+                //                if (l+j  != numOfPeople)
+                //                    prakimRange[l + (j)].From = i ;
 
-                            }
-                            else
-                            {
+                //            }
+                //            else
+                //            {
 
-                                prakimRange[l + j].Count = count;
+                //                prakimRange[l + j].Count = count;
 
-                                prakimRange[l + j++].To = i - 1;
-                                if (l +j != numOfPeople)
-                                    prakimRange[l + (j)].From = i;
-                                i++;
-                            }
-                        }
-                    }
-                }
+                //                prakimRange[l + j++].To = i - 2;
+                //                if (l +j != numOfPeople)
+                //                    prakimRange[l + (j)].From = i-1;
+                //                i++;
+                //            }
+                //        }
+                //    }
+                //}
                 //הדפסת הפסוקים המתאימים, בהתחשב בפרק קיט
                 for (i = 0; i < prakimRange.Length; i++)
                 {
-                    prakimRange[i].From = prakimRange[i].From + 1;
-                    prakimRange[i].To = prakimRange[i].To + 1;
-                    int from = prakimRange[i].From;
-                    int to = prakimRange[i].To;
+                    
+                    int from = prakimRange[i].From + 1;
+                    int to = prakimRange[i].To+ 1;
 
                     if (from < 119 && to < 119)//כאשר הפרקים קטנים מקיט יש להדפיס כרגיל
                     {
-                        perekToOt.TryGetValue(prakimRange[i].From, out fromPerek);
-                        perekToOt.TryGetValue(prakimRange[i].To, out toPerek);
+                        perekToOt.TryGetValue(from, out fromPerek);
+                        perekToOt.TryGetValue(to, out toPerek);
 
                         Console.WriteLine("יהודי מספר   " + (i + 1) + " צריך לומר מפרק  " + (fromPerek) + " עד פרק " + (toPerek) + " . זכור! מדובר ב " + prakimRange[i].Count + " פסוקים.");
                     }
@@ -300,16 +304,16 @@ namespace Psalms//לשבת על פרק קיט ולתעד...
 
         static void Main(string[] args)
        {
-            //    for (int i = 1; i < 150; i++)
-            //    {
-            //        Console.WriteLine("");
-            //        Console.WriteLine("");
-            //        Console.WriteLine("");
-            //        printTeilimParts(i);
-            //    }
+            for (int i = 1; i < 150; i++)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                printTeilimParts(i);
+            }
 
 
-            printTeilimParts(19);
+            printTeilimParts(69);
         }
     }
 }
